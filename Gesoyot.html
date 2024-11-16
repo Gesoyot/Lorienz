@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lorienz Kien Zaky Gesoyot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+        body {
+            background-color: gray;
+       } 
+
+       .song-list li {
+            text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;
+            border-radius:15px;
+            padding: 20px;
+            border-bottom: 2px solid skyblue;
+            position: relative; 
+            transition: all 0.3s ease-in-out;
+       }
+       .song-list li a {
+            color: skyblue;
+            text-decoration: none;
+            display: inline-block;
+            padding: 4px;
+            transition: all 0.3s ease-in-out;
+        }
+        .song-list li:hover {
+            background-color: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+        .song-list li a:hover {
+            color: white;
+            text-decoration: underline;
+            text-shadow: 0 0 10px skyblue, 0 0 15px skyblue;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 200px;
+            border: solid 3px skyblue;
+            box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .social-icons a {
+            font-size: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+        .social-icons a.tiktok {
+            color: #69c9d0;
+        }
+        .social-icons a.tiktok:hover {
+            color: #69c9d0;
+            text-shadow: 0 0 10px #69c9d0, 0 0 15px #69c9d0;
+            transform: scale(1.2);
+        }
+        .social-icons a.facebook {
+            color: #1877f2;
+        }
+        .social-icons a.facebook:hover {
+            color: #1877f2;
+            text-shadow: 0 0 10px #1877f2, 0 0 15px #1877f2;
+            transform: scale(1.2);
+        }
+        .social-icons a.twitter {
+            color: #1da1f2;
+        }
+        .social-icons a.twitter:hover {
+            color: #1da1f2;
+            text-shadow: 0 0 10px #1da1f2, 0 0 15px #1da1f2;
+            transform: scale(1.2);
+        }
+        .social-icons a.spotify {
+            color: #1db954;
+        }
+        .social-icons a.spotify:hover {
+            color: #1db954;
+            text-shadow: 0 0 10px #1db954, 0 0 15px #1db954;
+            transform: scale(1.2);
+        }
+
+        .dd {
+            position:relative;
+            display: inline-block;
+        }
+        .dd-btn {
+            padding: 10px;
+            text-align: center;
+            background: skyblue;
+            border: none;
+            width: 150px;
+            color: white;
+        }
+        .dd-content {
+            position: absolute;
+            width: 60%;
+            box-shadow: 0 18px 36px rgba(0,0,0,0.30), 0 14px 11px rgba(0,0,0,0.22);
+            max-height: 0;
+            transition: max-height 1.4s ease-in-out;
+            overflow: hidden;
+        }
+        .dd:hover > .dd-content {
+            max-height: 200px;
+        }
+        .dd-content > a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .card {
+            box-shadow: 0 0 8px 0 rgba(0, 0, 15, 15);
+            max-width: 500px;
+            text-align: center;
+            font-family: Arial;
+            background-color: black;
+            padding: 30px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid skyblue;
+        }
+
+        .info-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 15, 15);
+            max-width: 500px;
+            background-color: black;
+            padding: 30px;
+            font-family: Arial;
+            text-align: left;
+            border: 2px solid skyblue;
+        }
+
+        .song-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 15, 15);
+            max-width: 500px;
+            background-color: black;
+            padding: 30px;
+            font-family: Arial;
+            text-align: left;
+            border: 2px solid skyblue;
+            margin-top: 20px;
+        }
+        .song-card h2 {
+            color: skyblue;
+            text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;
+        }
+        .song-list {
+            list-style: none;
+            padding: 0;
+            color: white;
+        }
+        .song-list li {
+            padding: 20px;
+            border-bottom: 1px solid skyblue;
+        }
+        .song-list li a {
+            color: skyblue;
+            text-decoration: none;
+        }
+        .song-list li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .title {
+            color: gray;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 15px;
+            color: white;
+            background-color: skyblue;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 8px skyblue;
+        }
+        button:hover {
+            background-color: skyblue;
+            box-shadow: 0 0 15px 3px rgba(135, 206, 250, 0.8);
+            transform: scale(1.2);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .social-icons a {
+            font-size: 30px;
+            color: blue;
+            transition: all 0.3s ease-in-out;
+        }
+        .social-icons a:hover {
+            color: skyblue;
+            text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;
+            transform: scale(1.2);
+        }
+
+        @keyframes textAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+
+        header h3 {
+            animation: textAnimation 6s infinite;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;
+        }
+
+    </style>
+</head>
+<body>   
+        <div class="card" style="border-radius: 30px;" id="Home">
+            <header style="border-radius: 15px;background-color: black; color: white; border: 2px solid skyblue; padding: 5px; text-align: right;">
+                <marquee direction="left">
+                    <h3>WELCOME TO MY WEBPAGE</h3>
+                </marquee>
+                <div class="dd">
+                    <button class="dd-btn">Click more</button>
+                    <div class="dd-content" style="text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">
+                        <a href="#Home"> Home </a>
+                        <a href="#About"> About </a>
+                        <a href="#Songs"> Songs </a>  
+                    </div>
+                </div>
+            </header>
+
+            <h2 style="color:skyblue;text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Profile</h2>
+            <img src="Screenshot_20241109_184858.jpg" style="width: 60%; border-radius: 200px; border: solid 3px skyblue; box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.8); ">
+            <h1 style="color:white; text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Lorienz M. Gesoyot</h1>
+            <p class="title">Student</p>
+            <h5 style="color:white">Antipolo National High School</h5>
+
+            <div class="social-icons" style="text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">
+                <a href="https://www.facebook.com/lorienz.gesoyot?mibextid=ZbWKwL" class="facebook">
+                <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@kityycatt77?_t=8rPgvV9vr8f&_r=1" class="tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://open.spotify.com/user/31loshpbkd3r7sgyzfkuzbuls4hm?si=yAoIwaSUS_-5hYXRwtEEeg" class="spotify">
+                <i class="fa-brands fa-spotify"></i>
+                </a>
+                <a href="#" class="twitter">
+                <i class="fa-brands fa-github"></i>
+                </a> 
+
+            </div>
+            <p><button href="https://www.facebook.com/lorienz.gesoyot?mibextid=ZbWKwL">Contact</button></p>
+        </div>
+
+        <div class="info-card" id="About" style="border-radius: 30px;">
+            <h2 style="color:white; text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;" >Additional Information</h2>
+            <p style="color:white"><strong style="color:skyblue;text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Email:</strong> gesoyotlorienzkienzaky@gmail.com</p>
+            <p style="color:white"><strong style="color:skyblue;text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Phone:</strong> 123-456-7890</p>
+            <p style="color:white"><strong style="color:skyblue;text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Skills:</strong> Interpersonal communication, writing, creativity</p>
+            <p style="color:white"><strong style="color:skyblue;text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">Talents:</strong> Reading, Gaming</p>
+            <p style="color:white"><strong style="color:white; text-shadow: 0 0 8px skyblue, 0 0 10px skyblue, 0 0 15px skyblue;">About Me:</strong> Hi, I'm Lorienz Gesoyot, a curious and enthusiastic coding beginner. I'm excited to start my journey in the world of programming and learn as much as I can!</p>
+        </div>
+
+      <div class="song-card" style="border-radius: 30px">
+      <header style="background-color: black; color: white; padding: 5px; text-align: right;">
+       <marquee direction="left">
+         <h2 style="color:white"> "My Favorite Songs"</h2>
+       </marquee>
+      </header>
+            <ul class="song-list" id="Songs">
+                <li><a href="https://open.spotify.com/track/2CspwnypzT7rcWI9RfsoSb?si=nNl-akhFS1yNf2KivewEOw">Mantra</a></li>
+                <li><a href="https://open.spotify.com/track/5vNRhkKd0yEAg8suGBpjeY?si=CGbcxDFQRyuyiA--AlwyiA">APT</a></li>
+                <li><a href="https://open.spotify.com/track/3yDRcs0Y4pPzkvMbUfeF9H?si=6srjabHUS7C5FPofYwTQtA">Moonlit Floor</a></li>
+                <li><a href="https://open.spotify.com/track/7ov3TDp5D00Rnu5R1viX4w?si=Qlt03fEsSzS94WDBx9yrgA">New Woman</a></li>
+                <li><a href="https://open.spotify.com/track/6vvPecFTmWxDfEJ6cYT1wa?si=GEi42YLaQee9l7VXeYtQsQ">Rock Star</a></li>
+                <li><a href="https://open.spotify.com/track/6aJn7Cst74cj4lNIiPRgav?si=ZBey3JGmT8OWrhYhieS5yQ">Touch</a></li>
+                <li><a href="https://open.spotify.com/track/3RkSwrsIadAvqVtMp5yhaB?si=cdBPCeR2Q2muuTmbwo43BA">XO</a></li>  
+                <li><a href="https://open.spotify.com/track/72gPDy1zVt95zVNali0IhK?si=n159ZxBFQ2aT14o9GGQjxw">Meow</a></li>
+                <li><a href="https://open.spotify.com/track/58AZXyKRlsMBMcrRjpJpVG?si=tXjGiYUyQoSEp8kOVaPuUg">Debute</a></li>
+                <li><a href="https://open.spotify.com/track/21LtZQQMQYwVIxc9O9Ygq8?si=ef3iB-FcR9qNHQA3VX6omg">Cherish</a></li>
+                <li><a href="https://open.spotify.com/track/1aKvZDoLGkNMxoRYgkckZG?si=ro12c_HsQpabePfGGA6pSg">Magnetic</a></li>  
+                <li><a href="https://open.spotify.com/track/198zDKzyktXRG1PGpidY9h?si=9HdJxtiISL6Bu91mdeN_BQ">Drip</a></li>
+                <li><a href="https://open.spotify.com/track/0znsc67nMhP4X9hjhvoyeP?si=YJMdFQNdQ_q6DN3G5t1svg">Tict-Tack</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1EIY6JExFQGdPE?si=4cYnBANxRFG1IjQo7ERi-Q&pi=nsTs9SRFTWu09">Curious</a></li>
+           </ul>
+        </div>
+    </div>
+</body>
+</html>
